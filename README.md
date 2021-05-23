@@ -15,6 +15,8 @@ Usage:
 * Open up your browser at <http://localhost:8080/auth/admin>
 * Test your heart out!
 
+For convenience, a copy of the built-in themes is available under the `defaults` folder. It can be useful to build appropriate overrides. Keep in mind that it may not be 100% up-to-date with the latest releases.
+
 ## Production use
 
 To install these in production, you will need to place the desired theme folder(s) into `/opt/jboss/keycloak/themes` of the Keycloak container by either:
