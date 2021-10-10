@@ -66,6 +66,13 @@ steps:
     Contents: '*.yaml'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
+- task: CopyFiles@2
+  displayName: Copying pvc files
+  inputs:
+    SourceFolder: './theme-pvcs'
+    Contents: '*.yaml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/pvcs'
+
 - task: PublishBuildArtifacts@1
   displayName: Publish configuration package
   # Only publish master branch
