@@ -7,7 +7,7 @@ initContainers:
 
 extraVolumeMounts:
 - name: themes
-  mountPath: /opt/bitnami/keycloak/themes/oaf
+  mountPath: /opt/bitnami/keycloak/themes
 
 extraVolumes:
 - name: themes
