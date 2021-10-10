@@ -4,11 +4,11 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- main
 - develop
 
 pr:
-- master
+- main
 - develop
 - feature/*
 
