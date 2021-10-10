@@ -3,11 +3,12 @@ initContainers:
    image: oaftech.azurecr.io/oneacrefund/keycloak-themes:latest
    volumeMounts:
    - name: themes
-     mountPath: /usr/keycloak/themes
+     mountPath: /usr/keycloak/themes/alfresco
 
 extraVolumeMounts:
 - name: themes
-  mountPath: /opt/bitnami/keycloak/themes
+  mountPath: /opt/bitnami/keycloak/themes/alfrsco
+  subPath: alfresco
 
 extraVolumes:
 - name: themes
