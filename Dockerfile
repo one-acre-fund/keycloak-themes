@@ -1,7 +1,7 @@
 FROM busybox:1.28
 
 COPY themes/ /usr/oaf/keycloack/themes/
-RUN mkdir /usr/keycloak/themes
+RUN mkdir -p /usr/keycloak/themes
 
 RUN ls /usr/oaf/keycloack/themes/
 
