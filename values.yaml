@@ -3,7 +3,7 @@ initContainers:
    image: oaftech.azurecr.io/oneacrefund/keycloak-themes:latest
    volumeMounts:
    - name: themes
-     mountPath: /usr/keycloak/themes/oaf
+     mountPath: /usr/keycloak/themes
 
 extraVolumeMounts:
 - name: themes
