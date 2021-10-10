@@ -11,4 +11,5 @@ extraVolumeMounts:
 
 extraVolumes:
 - name: themes
-  claimName: keycloak-themes
+  persistentVolumeClaim:
+    claimName: keycloak-themes
