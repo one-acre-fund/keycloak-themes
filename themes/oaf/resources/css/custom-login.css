@@ -1,0 +1,150 @@
+html,
+body {
+	min-width:960px;
+}
+html, 
+body,
+.h-100 {
+    height: 100%;
+}
+h1 {
+	margin:0 !important;
+}
+.image-half {
+	float:right;
+	width: 50%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../img/Rosemary.jpg");
+}
+@media (min-device-width:821px){.image-half {background-size: cover;}}
+@media (max-device-width:820px){.image-half {background-size: contain;}}
+.login-half {
+	float:left;
+	text-align:center;
+	width:50%;
+}
+.login-box {
+	 margin: 40px auto 0 auto;
+	 display: inline-block;
+	 text-align:left;
+}
+.oaf-logo {
+	width: 264px;
+	height: 61.12px;
+	background-image:url("../img/OAF_Logo_Teal.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-left:10px;
+	margin-bottom: 57px;
+}
+.login-title {
+	font-size:48px;
+	color:#2B7F68;
+	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+}
+.sign-in-email-and-pass-div {
+	margin-top: 10px;
+}
+.sign-in-email-and-pass-link {
+	font-size:16px;
+	color:#000000;
+	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+}
+.hide-by-default {
+	display: none;
+}
+.big-btn {
+    width: 412px;
+    height: 56px;
+    background-color: #fcfcfc;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+    cursor: hand;
+    align-self: center;
+    user-select: none;
+    transition: all 400ms ease 0s;
+    display: flex;
+	border: 1px solid #2b7f68;
+	margin-top:30px;
+	padding: 6px 0 0 10px;
+}
+.big-btn .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    user-select: none
+}
+.big-btn .google-icon-svg {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 12px;
+    width: 25px;
+    height: 25px;
+    user-select: none
+}
+.big-btn .gt-icon-svg {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 360px;
+    width: 15px;
+    height: 15px;
+    user-select: none;
+}
+.big-btn .btn-text {
+    float: right;
+    margin: 11px 14px 0px 50px;
+    color: #2b7f68;
+    font-size: 16px;
+    letter-spacing: .2px;
+	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+    user-select: none
+}
+.big-btn:hover {
+    box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
+    user-select: none
+}
+.big-btn:active {
+    box-shadow: 0 1px 1px #757575;
+    background: #F8F8F8;
+    color: #fff;
+    user-select: none
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.panel-body{
+    padding-top: 30px;
+}
+
+#kc-logo-wrapper {
+    background-image: none;
+    background-repeat: no-repeat;
+    visibility: hidden;
+}
+
+#kc-content #kc-content-wrapper #kc-form {
+    width: 100%;
+    height: 100%;
+}
+
+#loginbox {
+    margin-top: 40px;
+}
+
+.manual-login-form {
+	width:412px;
+}
+
+.or-div {
+	margin-bottom:25px;
+	width:100%;
+	text-align:center;
+}
