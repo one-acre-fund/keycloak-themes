@@ -34,6 +34,15 @@ steps:
     containerRegistry: azurecr-oaf
     command: "login"
 
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      ls
+
 - task: Docker@2
   displayName: Build custom plugins image
   inputs:
