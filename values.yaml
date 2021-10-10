@@ -1,0 +1,14 @@
+initContainers:
+ - name: init-myservice
+   image: oaftech.azurecr.io/oneacrefund/keycloak-themes:latest
+   volumeMounts:
+   - name: themes
+     mountPath: /usr/kycloak/themes
+
+extraVolumeMounts:
+- name: themes
+  mountPath: /opt/bitnami/keycloak/themes/oaf
+
+extraVolumes:
+- name: themes
+  emptyDir: {}
