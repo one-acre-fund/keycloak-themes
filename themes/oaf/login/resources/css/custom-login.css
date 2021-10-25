@@ -10,6 +10,10 @@ body,
 h1 {
 	margin:0 !important;
 }
+.whitney-font-400 {
+	font-family: Whitney, Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}
 .image-half {
 	float:right;
 	width: 50%;
@@ -42,7 +46,8 @@ h1 {
 .login-title {
 	font-size:48px;
 	color:#2B7F68;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+	font-family: Whitney, Helvetica, Arial, sans-serif;
+	font-weight: 600;
 }
 .sign-in-email-and-pass-div {
 	margin-top: 10px;
@@ -50,10 +55,17 @@ h1 {
 .sign-in-email-and-pass-link {
 	font-size:16px;
 	color:#000000;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
+	font-family: Whitney, Helvetica, Arial, sans-serif;
+	font-weight: 500;
 }
 .hide-by-default {
 	display: none;
+}
+.forgot-password {
+	font-size:14px;
+	color:#000000;
+	font-family: Whitney, Helvetica, Arial, sans-serif;
+	font-weight: 400;
 }
 .big-btn {
     width: 412px;
@@ -102,8 +114,9 @@ h1 {
     color: #2b7f68;
     font-size: 16px;
     letter-spacing: .2px;
-	font-family: "Whitney SSm A", "Whitney SSm B", Helvetica, Arial, sans-serif;
-    user-select: none
+	font-family: Whitney, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+    user-select: none;
 }
 .big-btn:hover {
     box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
@@ -148,3 +161,4 @@ h1 {
 	width:100%;
 	text-align:center;
 }
+

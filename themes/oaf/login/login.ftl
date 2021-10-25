@@ -9,7 +9,7 @@
                     <div style="margin-left:20px">
 						<div class="panel-heading oaf-logo"></div>
                         <div class="panel-heading">
-                            <div class="panel-title login-title">Welcome Back</div>
+                            <div class="panel-title login-title">Welcome</div>
 							<#if realm.password && social.providers??>
 								<#list social.providers as p>
 									<#if p.displayName = "Google">										
@@ -27,9 +27,6 @@
 									</#if>
 								</#list>
 							</#if>
-                            <#if realm.resetPasswordAllowed>
-                                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></div>
-                            </#if>
                         </div>
 
                         <div class="panel-body" >
@@ -45,7 +42,7 @@
                                 <div class="or-div">
 									or
 								</div>
-								<div class="${properties.kcInputWrapperClass!}">
+								<div class="${properties.kcInputWrapperClass!} whitney-font-400">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <#if usernameEditDisabled??>
                                         <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>"/>
@@ -54,10 +51,13 @@
                                     </#if>
                                 </div>
 
-                                <div class="${properties.kcInputWrapperClass!}">
+                                <div class="${properties.kcInputWrapperClass!} whitney-font-400">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                     <input tabindex="2" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off" placeholder="${msg("password")}"/>
                                 </div>
+								<#if realm.resetPasswordAllowed>
+									<div style="float:right;margin-top:-20px"><a href="${url.loginResetCredentialsUrl}" class="forgot-password">${msg("doForgotPassword")}</a></div>
+								</#if>
 
                                 <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                                     <#if realm.rememberMe && !usernameEditDisabled??>
@@ -77,7 +77,7 @@
                                     <div class="${properties.kcFormButtonsWrapperClass!}">
                                         <a href="#" onclick="document.getElementById('kc-form-login').submit()">
 											<div class="big-btn" style="margin-top:0;background-color:#2b7f68;">  
-												<p class="btn-text" style="color:white;margin-left:10px;">Sign in</p>
+												<p class="btn-text" style="color:white;margin-left:10px;font-weight:600">Sign in</p>
 												<img class="gt-icon-svg" alt="arrow" src="${url.resourcesPath}/img/gt-white.svg">
 											</div>
 										</a>
