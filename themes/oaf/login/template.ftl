@@ -45,7 +45,8 @@
     </div>
     <div class="${properties.kcFormCardClass!} h-100">
         <header class="${properties.kcFormHeaderClass!}">
-            <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
+			<!-- Always hidden because language is selected prior to the login page -->
+            <#if false && realm.internationalizationEnabled  && locale.supported?size gt 1> 
                 <div id="kc-locale">
                     <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
                         <div class="kc-dropdown" id="kc-locale-dropdown">
