@@ -109,6 +109,21 @@
                                     </div>
                                 </#if>
                             </form>
+                            <#if realm.internationalizationEnabled  && locale.supported?size gt 1> 
+                                <div id="kc-locale">
+                                    <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!} whitney-font-400"">
+                                        <div class="kc-dropdown" id="kc-locale-dropdown">
+                                            <div style="float:center;margin-top:100px;">
+                                                <select onchange="location = this.value;" style=" border:0px;outline:0px;">
+                                                    <#list locale.supported as l>
+                                                    <option value="${l.url}" <#if l.label== locale.current> selected="selected" </#if>>${l.label}</option>
+                                                    </#list>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </#if>
                         </div>
                     </div>
                 </div>
