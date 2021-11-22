@@ -37,7 +37,7 @@
 								</div>
 
 								<div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-									<input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
+									<input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" style="margin-top:0; margin-left:15px; background-color:#2b7f68; border-width: 0px;" type="submit" value="${msg("doSubmit")}"/>
 								</div>
 							</div>
 						</form>
