@@ -14,27 +14,27 @@
 							<div class="${properties.kcFormGroupClass!}">
 								<div class="${properties.kcInputWrapperClass!}">
 									<#if auth?has_content && auth.showUsername()>
-									<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-                                        <input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
+										<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
+											<input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
+											<div class="mdc-notched-outline">
+												<div class="mdc-notched-outline__leading"></div>
+												<div class="mdc-notched-outline__notch">
+													<label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+												</div>
+												<div class="mdc-notched-outline__trailing"></div>
+											</div>
+										</div>
 									<#else>
-									<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-                                        <input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                                        <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                            <div class="mdc-notched-outline__notch">
-                                                <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                                            </div>
-                                            <div class="mdc-notched-outline__trailing"></div>
-                                        </div>
-                                    </div>
+										<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
+											<input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
+											<div class="mdc-notched-outline">
+												<div class="mdc-notched-outline__leading"></div>
+												<div class="mdc-notched-outline__notch">
+													<label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+												</div>
+												<div class="mdc-notched-outline__trailing"></div>
+											</div>
+										</div>
 									</#if>
 
 									<#if messagesPerField.existsError('username')>
