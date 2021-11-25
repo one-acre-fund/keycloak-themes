@@ -45,15 +45,42 @@
 								<div class="${properties.kcInputWrapperClass!} whitney-font-400">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <#if usernameEditDisabled??>
-                                        <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>"/>
+                                        <div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
+                                            <input tabindex="1" id="username" class="${properties.kcInputClass!} mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" disabled/>
+                                            <div class="mdc-notched-outline">
+                                                <div class="mdc-notched-outline__leading"></div>
+                                                <div class="mdc-notched-outline__notch">
+                                                    <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                </div>
+                                                <div class="mdc-notched-outline__trailing"></div>
+                                            </div>
+                                        </div>
                                     <#else>
-                                        <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" placeholder="<#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>" />
+                                        <div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
+                                            <input tabindex="1" id="username" class="${properties.kcInputClass!} mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" />
+                                            <div class="mdc-notched-outline">
+                                                <div class="mdc-notched-outline__leading"></div>
+                                                <div class="mdc-notched-outline__notch">
+                                                    <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                </div>
+                                                <div class="mdc-notched-outline__trailing"></div>
+                                            </div>
+                                        </div>
                                     </#if>
                                 </div>
 
                                 <div class="${properties.kcInputWrapperClass!} whitney-font-400">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input tabindex="2" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off" placeholder="${msg("password")}"/>
+                                     <div class="mdc-text-field mdc-textfield2 mdc-text-field--outlined" style="width:100%;">
+                                         <input tabindex="2" id="password" class="${properties.kcInputClass!} mdc-text-field__input" name="password" type="password" autocomplete="off"/>
+                                         <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                              <div class="mdc-notched-outline__notch">
+                                                <label width="100%" for="text-field-hero-input" class="mdc-floating-label">${msg("password")}</label>
+                                             </div>
+                                            <div class="mdc-notched-outline__trailing"></div>    
+                                        </div> 
+                                    </div>
                                 </div>
 								<#if realm.resetPasswordAllowed>
 									<div style="float:right;margin-top:-20px"><a href="${url.loginResetCredentialsUrl}" class="forgot-password">${msg("doForgotPassword")}</a></div>

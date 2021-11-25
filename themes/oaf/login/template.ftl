@@ -7,6 +7,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
 
+     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6895774/6689172/css/fonts.css" />
+    <!-- Required styles for Material Web -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <!-- Required Material Web JavaScript library -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
@@ -146,6 +152,12 @@
 
     </div>
   </div>
+
+  <script>
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-textfield1'));
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-textfield2'));
+  </script>
+  
 </body>
 </html>
 </#macro>
