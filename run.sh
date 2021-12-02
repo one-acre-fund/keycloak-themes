@@ -22,6 +22,6 @@ docker run -it -p 8080:8080 \
   -e KEYCLOAK_DEFAULT_THEME="$1" \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin \
-  -v $(pwd)/themes/$1:/opt/jboss/keycloak/themes/$1 \
-  -v $(pwd)/resources/standalone.xml:/opt/jboss/keycloak/standalone/configuration/standalone.xml \
+  -v "$(pwd)/themes/$1":/opt/jboss/keycloak/themes/$1 \
+  -v "$(pwd)/resources/standalone.xml":/opt/jboss/keycloak/standalone/configuration/standalone.xml \
   jboss/keycloak
