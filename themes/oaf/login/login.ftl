@@ -42,48 +42,46 @@
                                 <div class="or-div">
 									or
 								</div>
-								<div class="${properties.kcInputWrapperClass!} whitney-font-400">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<div class="whitney-font-400">
                                     <#if usernameEditDisabled??>
                                         <div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-                                            <input tabindex="1" id="username" class="${properties.kcInputClass!} mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" disabled/>
+                                            <input tabindex="1" id="username" class="mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" disabled/>
                                             <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
+                                                <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
+                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                                                 </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
+                                                <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
                                             </div>
                                         </div>
                                     <#else>
                                         <div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-                                            <input tabindex="1" id="username" class="${properties.kcInputClass!} mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" />
+                                            <input tabindex="1" id="username" class="mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" style="font-size:15px;"/>
                                             <div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading"></div>
-                                                <div class="mdc-notched-outline__notch">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
+                                                <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
+                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                                                 </div>
-                                                <div class="mdc-notched-outline__trailing"></div>
+                                                <div class="mdc-notched-outline__trailing text-box" style="border-color: #2b7f68;"></div>
                                             </div>
                                         </div>
                                     </#if>
                                 </div>
 
-                                <div class="${properties.kcInputWrapperClass!} whitney-font-400">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <div class="whitney-font-400"style="margin-top:30px" >
                                      <div class="mdc-text-field mdc-textfield2 mdc-text-field--outlined" style="width:100%;">
-                                         <input tabindex="2" id="password" class="${properties.kcInputClass!} mdc-text-field__input" name="password" type="password" autocomplete="off"/>
+                                         <input tabindex="2" id="password" class="mdc-text-field__input" name="password" type="password" autocomplete="off" style="font-size:15px;"/>
                                          <div class="mdc-notched-outline">
-                                            <div class="mdc-notched-outline__leading"></div>
-                                              <div class="mdc-notched-outline__notch">
-                                                <label width="100%" for="text-field-hero-input" class="mdc-floating-label">${msg("password")}</label>
+                                            <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
+                                              <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
+                                                <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;">${msg("password")}</label>
                                              </div>
-                                            <div class="mdc-notched-outline__trailing"></div>    
+                                            <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>    
                                         </div> 
                                     </div>
                                 </div>
 								<#if realm.resetPasswordAllowed>
-									<div style="float:right;margin-top:-20px"><a href="${url.loginResetCredentialsUrl}" class="forgot-password">${msg("doForgotPassword")}</a></div>
+									<div style="float:right;margin-top:auto"><a href="${url.loginResetCredentialsUrl}" class="forgot-password">${msg("doForgotPassword")}</a></div>
 								</#if>
 
                                 <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
@@ -100,7 +98,7 @@
                                     </#if>
                                 </div>
 
-                                <div id="kc-form-buttons" style="margin-top:10px" class="${properties.kcFormButtonsClass!}">
+                                <div id="kc-form-buttons" style="margin-top:40px" class="${properties.kcFormButtonsClass!}">
                                     <div class="${properties.kcFormButtonsWrapperClass!}">
                                         <a href="#" onclick="document.getElementById('kc-form-login').submit()">
 											<div class="big-btn" style="margin-top:0;background-color:#2b7f68;">  
