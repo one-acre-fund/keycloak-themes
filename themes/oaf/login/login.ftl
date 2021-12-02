@@ -62,7 +62,7 @@
                                                 <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
                                                     <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                                                 </div>
-                                                <div class="mdc-notched-outline__trailing text-box" style="border-color: #2b7f68;"></div>
+                                                <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
                                             </div>
                                         </div>
                                     </#if>

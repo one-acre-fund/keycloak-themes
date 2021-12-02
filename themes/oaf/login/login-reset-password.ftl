@@ -11,31 +11,31 @@
 
 					<div class="panel-body" >
 						<form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-							<div class="${properties.kcFormGroupClass!}">
-								<div class="${properties.kcInputWrapperClass!}">
-									<#if auth?has_content && auth.showUsername()>
-										<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-											<input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>" style="font-size:15px;"/>
-											<div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
-                                                <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing text-box" style="border-color: #2b7f68;"></div>
-                                            </div>
-										</div>
-									<#else>
-										<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-											<input type="text" id="username" name="username" class="${properties.kcInputClass!} mdc-text-field__input" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>" style="font-size:15px;"/>
-											<div class="mdc-notched-outline">
-                                                <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
-                                                <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                                                </div>
-                                                <div class="mdc-notched-outline__trailing text-box" style="border-color: #2b7f68;"></div>
-                                            </div>
-										</div>
-									</#if>
+							<div class="whitney-font-400">
+								<div class="whitney-font-400" style="margin-bottom:20px;">
+										<#if auth?has_content && auth.showUsername()>
+											<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined">
+												<input id="username" class="mdc-text-field__input" name="username" type="text" autofocus value="${auth.attemptedUsername}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>" style="font-size:15px;"/>
+												<div class="mdc-notched-outline">
+													<div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
+													<div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
+														<label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+													</div>
+													<div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
+												</div>
+											</div>
+										<#else>
+											<div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined">
+												<input id="username" class="mdc-text-field__input" name="username" type="text" autofocus aria-invalid="<#if messagesPerField.existsError('username')>true</#if>" style="font-size:15px;"/>
+												<div class="mdc-notched-outline">
+													<div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
+													<div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
+														<label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+													</div>
+													<div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
+												</div>
+											</div>
+										</#if>
 
 									<#if messagesPerField.existsError('username')>
 										<span id="input-error-username" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
