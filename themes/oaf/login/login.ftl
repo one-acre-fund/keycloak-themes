@@ -9,7 +9,7 @@
                     <div style="margin-left:20px">
 						<div class="panel-heading oaf-logo"></div>
                         <div class="panel-heading">
-                            <div class="panel-title login-title">Welcome</div>
+                            <div class="panel-title login-title">${msg("welcome")}</div>
 							<#if realm.password && social.providers??>
 								<#list social.providers as p>
 									<#if p.displayName = "Google">										
@@ -18,12 +18,12 @@
 											  <div class="google-icon-wrapper">
 												<img class="google-icon-svg" alt="G" src="${url.resourcesPath}/img/Google_Logo_From_Wiki.svg"/>
 											  </div>
-											  <p class="btn-text">Sign in with Google</p>
+											  <p class="btn-text">${msg("doLogInWithGoogle")}</p>
 											  <img class="gt-icon-svg" alt="arrow" src="${url.resourcesPath}/img/gt.svg">
 											</div>
 										</a>
 									<#else>
-										<a href="${p.loginUrl}" id="zocial-${p.alias}" class="btn btn-primary">${msg("doLogIn")} With ${p.displayName}</a>
+										<a href="${p.loginUrl}" id="zocial-${p.alias}" class="btn btn-primary">${msg("doLogIn")} ${msg("with")} ${p.displayName}</a>
 									</#if>
 								</#list>
 							</#if>
@@ -36,11 +36,11 @@
                                 </div>
                             </#if>
                             <div id="sign-in-email-and-pass-link" class="sign-in-email-and-pass-div">
-								<a href="#" class="sign-in-email-and-pass-link" onclick="showForm()"><u>Sign in with email and password</u></a>
+								<a href="#" class="sign-in-email-and-pass-link" onclick="showForm()"><u>${msg("doLogInWithEmailAndPassword")}</u></a>
 							</div>
                             <form id="kc-form-login" class="${properties.kcFormClass!} hide-by-default manual-login-form" onsubmit="login.disabled = true; return true;" action="${url.loginAction?keep_after('^[^#]*?://.*?[^/]*', 'r')}" method="post">
                                 <div class="or-div">
-									or
+									${msg("or")}
 								</div>
 								<div class="whitney-font-400">
                                     <#if usernameEditDisabled??>
@@ -102,7 +102,7 @@
                                     <div class="${properties.kcFormButtonsWrapperClass!}">
                                         <a href="#" onclick="document.getElementById('kc-form-login').submit()">
 											<div class="big-btn" style="margin-top:0;background-color:#2b7f68;">  
-												<p class="btn-text" style="color:white;margin-left:10px;font-weight:600">Sign in</p>
+												<p class="btn-text" style="color:white;margin-left:10px;font-weight:600">${msg("doLogIn")}</p>
 												<img class="gt-icon-svg" alt="arrow" src="${url.resourcesPath}/img/gt-white.svg">
 											</div>
 										</a>
@@ -134,6 +134,21 @@
                                     </div>
                                 </#if>
                             </form>
+                            <#if realm.internationalizationEnabled  && locale.supported?size gt 1> 
+                                <div id="kc-locale">
+                                    <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!} whitney-font-400">
+                                        <div class="kc-dropdown" id="kc-locale-dropdown">
+                                            <div style="float:center;margin-top:100px;">
+                                                <select onchange="location = this.value;" style=" border:0px;outline:0px;">
+                                                    <#list locale.supported as l>
+                                                    <option value="${l.url}" <#if l.label== locale.current> selected="selected" </#if>>${l.label}</option>
+                                                    </#list>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </#if>
                         </div>
                     </div>
                 </div>
