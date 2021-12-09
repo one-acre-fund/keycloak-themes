@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
+    <!-- Required styles for Material Web -->
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <!-- Required Material Web JavaScript library -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
@@ -133,6 +137,12 @@
 
     </div>
   </div>
+
+  <script>
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-textfield1'));
+    mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-textfield2'));
+  </script>
+
 </body>
 </html>
 </#macro>
