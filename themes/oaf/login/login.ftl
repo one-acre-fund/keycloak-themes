@@ -49,18 +49,18 @@
                                             <div class="mdc-notched-outline">
                                                 <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
                                                 <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:14px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                                                 </div>
                                                 <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
                                             </div>
                                         </div>
                                     <#else>
                                         <div class="mdc-text-field mdc-textfield1 mdc-text-field--outlined" style="width:100%;">
-                                            <input tabindex="1" id="username" class="mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" style="font-size:15px;"/>
+                                            <input tabindex="1" id="username" class="mdc-text-field__input" name="username" type="text" value="${(login.username!'')}" style="font-size:14px;"/>
                                             <div class="mdc-notched-outline">
                                                 <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
                                                 <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
-                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                                    <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:14px;"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                                                 </div>
                                                 <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>
                                             </div>
@@ -70,11 +70,11 @@
 
                                 <div class="whitney-font-400"style="margin-top:30px" >
                                      <div class="mdc-text-field mdc-textfield2 mdc-text-field--outlined" style="width:100%;">
-                                         <input tabindex="2" id="password" class="mdc-text-field__input" name="password" type="password" autocomplete="off" style="font-size:15px;"/>
+                                         <input tabindex="2" id="password" class="mdc-text-field__input" name="password" type="password" autocomplete="off" style="font-size:14px;"/>
                                          <div class="mdc-notched-outline">
                                             <div class="mdc-notched-outline__leading" style="border-color: #2b7f68;"></div>
                                               <div class="mdc-notched-outline__notch" style="border-color: #2b7f68;">
-                                                <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:15px;">${msg("password")}</label>
+                                                <label for="text-field-hero-input" class="mdc-floating-label" style="font-size:14px;">${msg("password")}</label>
                                              </div>
                                             <div class="mdc-notched-outline__trailing" style="border-color: #2b7f68;"></div>    
                                         </div> 
