@@ -76,7 +76,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish configuration package
   # Only publish master branch
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   inputs:
     PathtoPublish: $(Build.ArtifactStagingDirectory)
     ArtifactName: 'oaf-keycloak'
