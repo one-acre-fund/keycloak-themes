@@ -35,6 +35,20 @@
             <script src="${script}" type="text/javascript"></script>
         </#list>
     </#if>
+    <#if properties.matomoSiteId??>
+        <script>
+          var _paq = window._paq = window._paq || [];
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="https://analytics.oneacrefund.org/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '${properties.matomoSiteId}']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+    </#if>
     <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6895774/6689172/css/fonts.css" />
 </head>
 
