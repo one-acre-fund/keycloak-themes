@@ -1,16 +1,16 @@
 initContainers:
- - name: init-myservice
-   image: oaftech.azurecr.io/oneacrefund/keycloak-themes:latest
-   volumeMounts:
-   - name: themes
-     mountPath: /usr/keycloak/themes
+  - name: init-myservice
+    image: oaftech.azurecr.io/oneacrefund/keycloak-themes:latest
+    volumeMounts:
+    - name: themes
+      mountPath: /usr/keycloak/themes
 
 extraVolumeMounts:
-- name: themes
-  mountPath: /opt/bitnami/keycloak/themes/oaf
-  subPath: oaf
+  - name: themes
+    mountPath: /opt/bitnami/keycloak/themes/oaf
+    subPath: oaf
 
 extraVolumes:
-- name: themes
-  persistentVolumeClaim:
-    claimName: keycloak-themes
+  - name: themes
+    persistentVolumeClaim:
+      claimName: keycloak-themes

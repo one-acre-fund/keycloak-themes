@@ -1,0 +1,51 @@
+name: Oaf-Keycloak-Themes Build and Deploy
+run-name: oaf-keycloak-themes-${{ github.run_number }}
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.0
+        with:
+          fetch-depth: 0
+
+      - name: Get Git Tag and Set Variables
+        id: vars
+        run: |
+          VERSION_TAG=$(git describe --abbrev=0 --tags)
+          DATE=$(date +'%Y.%m.%d')
+          IMAGE_TAG="${VERSION_TAG}.${DATE}"
+          echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG is set to: $IMAGE_TAG"
+
+      - name: Login to Azure registry
+        uses: docker/login-action@v3.3.0
+        with:
+          registry: oaftech.azurecr.io
+          username: ${{ vars.ACR_PULL_USERNAME }}
+          password: ${{ secrets.ACR_PULL_PASSWORD }}
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v6.7.0
+        with:
+          file: ${{ github.workspace }}/Dockerfile
+          tags: oaftech.azurecr.io/oneacrefund/keycloak-themes:${{ steps.vars.outputs.IMAGE_TAG }}
+          push: true
+          context: ${{ github.workspace }}
+
+      - name: Update Values YAML
+        run: sed -i 's/:latest/:${{ steps.vars.outputs.IMAGE_TAG }}/' ${{ github.workspace }}/values.yaml
+
+      - name: Publish Artifacts
+        uses: actions/upload-artifact@v4.4.0
+        with:
+          name: oaf-keycloak
+          path: '*.yaml'
