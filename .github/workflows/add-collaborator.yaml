@@ -1,0 +1,25 @@
+name: Add Collaborator
+run-name: add-collaborator-${{ inputs.username }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: GitHub username to add as a collaborator
+        required: true
+        type: string
+
+jobs:
+  add-collaborator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add collaborator to keycloak-themes
+        env:
+          GH_TOKEN: ${{ secrets.BACKSTAGE_ADMIN_TOKEN }}
+        run: |
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${{ github.repository }}/collaborators/${{ inputs.username }}" \
+            -f permission=pull
