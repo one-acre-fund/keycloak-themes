@@ -35,7 +35,7 @@
                   <span class="kc-feedback-text">${kcSanitize(message.summary)?no_esc}</span>
                 </div>
               </#if>
-              <div id="sign-in-email-and-pass-link" class="sign-in-email-and-pass-div">
+              <div id="sign-in-email-and-pass-link" class="sign-in-email-and-pass-div" resource-id="kc-pwd-sign-in">
                 <a href="#" class="sign-in-email-and-pass-link" onclick="showForm()"><u>${msg("doLogInWithEmailAndPassword")}</u></a>
               </div>
               <form id="kc-form-login" class="${properties.kcFormClass!} hide-by-default manual-login-form" onsubmit="login.disabled = true; return true;" action="${url.loginAction?keep_after('^[^#]*?://.*?[^/]*', 'r')}" method="post">
